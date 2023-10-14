@@ -12,7 +12,7 @@ namespace Engine
 		/// </summary>
 		/// <param name="key">°´¼ü´úÂë</param>
 		/// <returns>°´¼ü×´Ì¬</returns>
-		static inline bool GetKey(KeyCode key)
+		inline static bool GetKey(KeyCode key)
 		{
 			return GetAsyncKeyState((int)key) & 0x8000;
 		}

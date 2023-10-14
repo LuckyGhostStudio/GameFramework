@@ -19,7 +19,7 @@ namespace Engine
 		std::vector<Behavior*> m_Behaviors;
 	public:
 		Application();
-		~Application();
+		virtual ~Application();
 
 		/// <summary>
 		/// ÔËÐÐ
@@ -36,4 +36,6 @@ namespace Engine
 		/// </summary>
 		void Update();
 	};
+
+	Application* CreateApplication();
 }

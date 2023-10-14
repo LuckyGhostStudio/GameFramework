@@ -1,13 +1,11 @@
 #include "Application.h"
 
 #include <chrono>
-#include <iostream>
 
-#include "Renderer/Renderer.h"
-#include "Input/Input.h"
+#include "Engine/Renderer/Renderer.h"
 #include "Time.h"
 
-#include "Scripts/Test.h"
+//#include "Scripts/Test.h"
 
 namespace Engine
 {
@@ -32,7 +30,7 @@ namespace Engine
 	
 	void Application::Initialize()
 	{
-		m_Behaviors.push_back(new Test());
+		//m_Behaviors.push_back(new Test());
 	}
 	
 	void Application::Update()
