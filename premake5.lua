@@ -25,10 +25,10 @@ project "Engine"		-- 项目
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")	-- 目标目录
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")	-- 中间目录
 
-	-- pchheader "exppch.h"	--预编译头文件
-	-- pchsource "Engine/src/exppch.cpp"
+	-- pchheader "egpch.h"	-- 预编译头文件
+	-- pchsource "Engine/src/egpch.cpp"
 
-	files				--文件
+	files				-- 文件
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
@@ -54,7 +54,7 @@ project "Engine"		-- 项目
 		defines			-- 预处理器定义
 		{
 			"EG_PLATFORM_WINDOWS",
-			"EG_BUILD_DLL",
+			"EG_ENABLE_ASSERTS"
 		}
 
 	filter "configurations:Debug"	-- Debug

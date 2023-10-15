@@ -1,3 +1,4 @@
+#include "egpch.h"
 #include "Renderer.h"
 
 #include <graphics.h>
@@ -8,17 +9,14 @@ namespace Engine
 	Vector3 Renderer::m_FillColor = Vector3::Vector3(255, 255, 255);
 	Vector3 Renderer::m_ClearColor = Vector3::Vector3(255, 255, 255);
 
-	void Renderer::Initialize(float width, float height, int flag)
+	void Renderer::Initialize()
 	{
-		initgraph((int)width, (int)height, flag);	// 初始化绘图窗口
-
 		BeginBatchDraw();							// 开始批量绘制：绘图操作暂存在缓冲区
 	}
 
 	void Renderer::ShutDown()
 	{
 		EndBatchDraw();		// 结束批量绘制：执行未完成的绘制任务
-		closegraph();		// 关闭绘图窗口
 	}
 
 	void Renderer::FlushBatch()

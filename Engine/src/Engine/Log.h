@@ -1,8 +1,9 @@
 #pragma once
 
-#include "spdlog/spdlog.h"
+#include "Core.h"
 
-#include <memory>
+#include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace Engine
 {
@@ -42,8 +43,8 @@ namespace Engine
 #define CORE_FATAL(...) Engine::Log::GetCoreLogger()->fatal(__VA_ARGS__)	//严重错误
 
 // 客户端日志
-#define TRACE(...)	Engine::Log::GetClientLogger()->trace(__VA_ARGS__)	//提示
-#define INFO(...)	Engine::Log::GetClientLogger()->info(__VA_ARGS__)	//信息
-#define WARN(...)	Engine::Log::GetClientLogger()->warn(__VA_ARGS__)	//警告
-#define ERROR(...)	Engine::Log::GetClientLogger()->error(__VA_ARGS__)	//错误
-#define FATAL(...)	Engine::Log::GetClientLogger()->fatal(__VA_ARGS__)	//严重错误
+#define EG_TRACE(...)	Engine::Log::GetClientLogger()->trace(__VA_ARGS__)	//提示
+#define EG_INFO(...)	Engine::Log::GetClientLogger()->info(__VA_ARGS__)	//信息
+#define EG_WARN(...)	Engine::Log::GetClientLogger()->warn(__VA_ARGS__)	//警告
+#define EG_ERROR(...)	Engine::Log::GetClientLogger()->error(__VA_ARGS__)	//错误
+#define EG_FATAL(...)	Engine::Log::GetClientLogger()->fatal(__VA_ARGS__)	//严重错误

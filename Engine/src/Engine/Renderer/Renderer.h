@@ -15,10 +15,7 @@ namespace Engine
 		/// <summary>
 		/// 初始化
 		/// </summary>
-		/// <param name="width">画布宽</param>
-		/// <param name="height">画布高</param>
-		/// <param name="flag">模式</param>
-		static void Initialize(float width, float height, int flag = 0);
+		static void Initialize();
 
 		/// <summary>
 		/// 关闭渲染器

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Engine/Input/Input.h"
-#include "Engine/Renderer/Renderer.h"
+//#include "Engine/Input/Input.h"
+//#include "Engine/Renderer/Renderer.h"
 #include "Engine/Behavior.h"
 
 using namespace Engine;
@@ -18,7 +18,7 @@ public:
 	// 渲染：每帧调用
 	void virtual Render() override
 	{
-		Renderer::DrawFillRectangle(300, 200, Vector3(255, 255, 0));
+		//Renderer::DrawFillRectangle(300, 200, Vector3(255, 255, 0));
 	}
 
 	// 更新：每帧调用
