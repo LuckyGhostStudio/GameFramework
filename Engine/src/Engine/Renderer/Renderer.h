@@ -1,21 +1,16 @@
 #pragma once
 
-#include "Engine/Math/Vector2.h"
-#include "Engine/Math/Vector3.h"
+#include "RenderCommand.h"
 
 namespace Engine
 {
 	class Renderer
 	{
 	public:
-		static Vector3 m_LineColor;		// 线颜色
-		static Vector3 m_FillColor;		// 填充颜色
-		static Vector3 m_ClearColor;	// 清屏颜色
-
 		/// <summary>
-		/// 初始化
+		/// 开始场景 TODO: Camera...
 		/// </summary>
-		static void Initialize();
+		static void BeginScene();
 
 		/// <summary>
 		/// 关闭渲染器
@@ -23,15 +18,15 @@ namespace Engine
 		static void ShutDown();
 
 		/// <summary>
-		/// 批渲染
+		/// 结束场景
 		/// </summary>
-		static void FlushBatch();
+		static void EndScene();
 
 		/// <summary>
 		/// 设置清屏颜色
 		/// </summary>
 		/// <param name="color"></param>
-		static void SetClearColor(Vector3 color = Vector3(255, 255, 255));
+		static void SetClearColor(const glm::vec4& color);
 
 		/// <summary>
 		/// 清屏
@@ -39,28 +34,11 @@ namespace Engine
 		static void Clear();
 
 		/// <summary>
-		/// 绘制边框矩形
-		/// </summary>
-		/// <param name="position">位置</param>
-		/// <param name="size">尺寸</param>
-		/// <param name="color">颜色</param>
-		static void DrawRectangle(Vector2 position, Vector2 size, Vector3 color);
-
-		/// <summary>
 		/// 绘制填充矩形
 		/// </summary>
 		/// <param name="position">位置</param>
 		/// <param name="size">尺寸</param>
 		/// <param name="color">颜色</param>
-		static void DrawFillRectangle(Vector2 position, Vector2 size, Vector3 color);
-
-		/// <summary>
-		/// 绘制填充矩形
-		/// </summary>
-		/// <param name="position">位置</param>
-		/// <param name="size">尺寸</param>
-		/// <param name="lineColor">边框颜色</param>
-		/// <param name="fillColor">填充颜色</param>
-		static void DrawFillRectangle(Vector2 position, Vector2 size, Vector3 lineColor, Vector3 fillColor);
+		static void DrawFillRectangle(const glm::vec3& position, const glm::vec3& size, const glm::vec4& color);
 	};
 }

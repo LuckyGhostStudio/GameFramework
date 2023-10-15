@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Core.h"
-//#include "Behavior.h"
 
 #include "Window.h"
 #include "Layer.h"
@@ -22,7 +21,6 @@ namespace Engine
 		bool m_Running = true;
 
 		std::vector<Layer*> m_Layers;		// 层列表
-		//std::vector<Behavior*> m_Behaviors;
 	public:
 		Application();
 		virtual ~Application();
@@ -38,16 +36,6 @@ namespace Engine
 		/// </summary>
 		void Run();
 	private:
-		/// <summary>
-		/// 初始化
-		/// </summary>
-		void Initialize();
-
-		/// <summary>
-		/// 更新：每帧
-		/// </summary>
-		void OnUpdate();
-
 		/// <summary>
 		/// 返回Application的实例
 		/// </summary>

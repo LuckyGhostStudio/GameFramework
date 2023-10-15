@@ -4,15 +4,12 @@
 #include "Engine/Layer.h"
 #include "Engine/Log.h"
 
-//#include "Engine/Time.h"
-//#include "Engine/Behavior.h"
+#include "Engine/Time.h"
 
-//#include "Engine/Renderer/Renderer.h"
+#include "Engine/Renderer/Renderer.h"
+#include "Engine/Renderer/RenderCommand.h"
 
-//#include "Engine/Input/Input.h"
-
-//#include "Engine/Math/Vector2.h"
-//#include "Engine/Math/Vector3.h"
+#include "Engine/Input/Input.h"
 
 // ---- EntryPoint -----
 #include "Engine/EntryPoint.h"

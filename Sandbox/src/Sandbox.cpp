@@ -10,7 +10,14 @@ public:
 
 	void OnUpdate() override
 	{
-		EG_TRACE("ExampleLayer::OnUpdate");
+		Engine::Renderer::SetClearColor({ 0.1f, 0.1f, 0.1f, 1.0f });	// 设置背景颜色
+		Engine::Renderer::Clear();										// 清屏
+
+		Engine::Renderer::BeginScene();
+
+		Engine::Renderer::DrawFillRectangle({ 400, 400, 0 }, { 100, 100, 0 }, { 0.2f, 0.8f, 0.6f, 1.0f });
+
+		Engine::Renderer::EndScene();
 	}
 };
 

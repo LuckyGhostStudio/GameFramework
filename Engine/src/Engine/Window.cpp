@@ -29,7 +29,7 @@ namespace Engine
 		m_Window = initgraph((int)props.Width, (int)props.Height, props.Flag);	// ³õÊ¼»¯»æÍ¼´°¿Ú
 
 		// string to wchar_t*
-		int pSize = MultiByteToWideChar(CP_OEMCP, 0, props.Title.c_str(), strlen(props.Title.c_str()) + 1, NULL, 0);
+		int pSize = MultiByteToWideChar(CP_OEMCP, 0, props.Title.c_str(), (int)(strlen(props.Title.c_str()) + 1), NULL, 0);
 		wchar_t* title = new wchar_t[pSize];
 		MultiByteToWideChar(CP_OEMCP, 0, props.Title.c_str(), strlen(props.Title.c_str()) + 1, title, pSize);
 		

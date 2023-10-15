@@ -11,9 +11,9 @@ workspace "GameFramework"	-- 解决方案名称
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"	-- 输出目录
 
---包含目录列表
+-- 包含目录列表
 IncludeDir = {}
--- IncludeDir["glm"] = "Engine/vendor/glm"
+IncludeDir["glm"] = "Engine/vendor/glm"
 
 project "Engine"		-- 项目
 	location "Engine"	-- 相对路径
@@ -32,8 +32,8 @@ project "Engine"		-- 项目
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
-		-- "%{prj.name}/vendor/glm/glm/**.hpp",
-		-- "%{prj.name}/vendor/glm/glm/**.inl"
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	defines
@@ -45,7 +45,7 @@ project "Engine"		-- 项目
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		-- "%{IncludeDir.glm}"
+		"%{IncludeDir.glm}"
 	}
 
 	filter "system:windows"	--windows系统
@@ -53,8 +53,7 @@ project "Engine"		-- 项目
 
 		defines			-- 预处理器定义
 		{
-			"EG_PLATFORM_WINDOWS",
-			"EG_ENABLE_ASSERTS"
+			"EG_PLATFORM_WINDOWS"
 		}
 
 	filter "configurations:Debug"	-- Debug
@@ -93,7 +92,7 @@ project "Sandbox"
 		"Engine/vendor/spdlog/include",
 		"Engine/src",
 		"Engine/vendor",
-		-- "%{IncludeDir.glm}"
+		"%{IncludeDir.glm}"
 	}
 
 	links
