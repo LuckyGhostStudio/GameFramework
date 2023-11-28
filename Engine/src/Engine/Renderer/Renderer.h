@@ -1,16 +1,28 @@
 #pragma once
 
 #include "RenderCommand.h"
+#include "Camera.h"
 
 namespace Engine
 {
 	class Renderer
 	{
-	public:
+	private:
 		/// <summary>
-		/// 开始场景 TODO: Camera...
+		/// 场景数据
 		/// </summary>
-		static void BeginScene();
+		struct SceneData
+		{
+			glm::mat4 ViewProjectionMatrix;	// vp矩阵
+		};
+
+		static SceneData* m_SceneData;	//场景数据
+	public:
+		static void Init();
+		/// <summary>
+		/// 开始场景
+		/// </summary>
+		static void BeginScene(Camera& camera);
 
 		/// <summary>
 		/// 关闭渲染器

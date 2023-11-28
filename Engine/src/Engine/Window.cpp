@@ -27,6 +27,8 @@ namespace Engine
 
 		CORE_INFO("Cteating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 		m_Window = initgraph((int)props.Width, (int)props.Height, props.Flag);	// 初始化绘图窗口
+		setorigin(0, (int)props.Height);										// 设置原点未知左下角
+		setaspectratio(1, -1);													// 翻转y
 
 		// string to wchar_t*
 		int pSize = MultiByteToWideChar(CP_OEMCP, 0, props.Title.c_str(), (int)(strlen(props.Title.c_str()) + 1), NULL, 0);

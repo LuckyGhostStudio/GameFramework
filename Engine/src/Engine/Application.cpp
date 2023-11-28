@@ -15,11 +15,15 @@ namespace Engine
 		s_Instance = this;
 
 		m_Window = std::unique_ptr<Window>(Window::Create());	// ´´½¨´°¿Ú
+
+		Renderer::Init();
 	}
 
 	Application::~Application()
 	{
 		m_Running = false;
+
+		Renderer::ShutDown();
 	}
 
 	void Application::PushLayer(Layer* layer)

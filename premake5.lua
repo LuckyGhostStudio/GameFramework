@@ -14,6 +14,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"	-- 输出目录
 -- 包含目录列表
 IncludeDir = {}
 IncludeDir["glm"] = "Engine/vendor/glm"
+IncludeDir["entt"] = "Engine/vendor/entt/include"
 
 project "Engine"		-- 项目
 	location "Engine"	-- 相对路径
@@ -33,6 +34,7 @@ project "Engine"		-- 项目
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/entt/include/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
@@ -45,7 +47,8 @@ project "Engine"		-- 项目
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	filter "system:windows"	--windows系统
@@ -92,7 +95,8 @@ project "Sandbox"
 		"Engine/vendor/spdlog/include",
 		"Engine/src",
 		"Engine/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
