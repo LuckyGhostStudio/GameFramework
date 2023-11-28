@@ -9,6 +9,7 @@ namespace Engine
 	{
 	public:
 		static Vector3 m_LineColor;		// 线颜色
+		static int m_LineWidth;			// 线宽
 		static Vector3 m_FillColor;		// 填充颜色
 		static Vector3 m_ClearColor;	// 清屏颜色
 
@@ -34,7 +35,7 @@ namespace Engine
 		/// 设置清屏颜色
 		/// </summary>
 		/// <param name="color"></param>
-		static void SetClearColor(Vector3 color = Vector3(255, 255, 255));
+		static void SetClearColor(const Vector3& color = Vector3(255, 255, 255));
 
 		/// <summary>
 		/// 清屏
@@ -47,7 +48,7 @@ namespace Engine
 		/// <param name="position">位置</param>
 		/// <param name="size">尺寸</param>
 		/// <param name="color">颜色</param>
-		static void DrawRectangle(Vector2 position, Vector2 size, Vector3 color);
+		static void DrawRectangle(const Vector2& position, const Vector2& size, const Vector3& color);
 
 		/// <summary>
 		/// 绘制填充矩形
@@ -55,7 +56,7 @@ namespace Engine
 		/// <param name="position">位置</param>
 		/// <param name="size">尺寸</param>
 		/// <param name="color">颜色</param>
-		static void DrawFillRectangle(Vector2 position, Vector2 size, Vector3 color);
+		static void DrawFillRectangle(const Vector2& position, const Vector2& size, const Vector3& color);
 
 		/// <summary>
 		/// 绘制填充矩形
@@ -64,6 +65,8 @@ namespace Engine
 		/// <param name="size">尺寸</param>
 		/// <param name="lineColor">边框颜色</param>
 		/// <param name="fillColor">填充颜色</param>
-		static void DrawFillRectangle(Vector2 position, Vector2 size, Vector3 lineColor, Vector3 fillColor);
+		static void DrawFillRectangle(const Vector2& position, const Vector2& size, const Vector3& lineColor, const Vector3& fillColor);
+
+		static void DrawCircle(const Vector2& position, float radius, const Vector3& color, float lineWidth = 1.0f);
 	};
 }

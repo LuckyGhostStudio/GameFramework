@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ostream>
+
 namespace Engine
 {
 	struct Vector2
@@ -83,6 +85,12 @@ namespace Engine
 		{
 			this->x -= other.x;
 			this->y -= other.y;
+		}
+
+		friend std::ostream& operator<<(std::ostream& output, const Vector2& vector)
+		{
+			output << "(" << vector.x << ", " << vector.y << ")";
+			return output;
 		}
 	};
 }

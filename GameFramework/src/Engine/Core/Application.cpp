@@ -7,12 +7,18 @@
 #include "Input/Input.h"
 #include "Time.h"
 
-#include "Scripts/Test.h"
+#include "Scripts/Player.h"
 
 namespace Engine
 {
+	Application* Application::s_Instance = nullptr;
+
 	Application::Application()
 	{
+		if (!s_Instance) {
+			s_Instance = this;
+		}
+
 		Renderer::Initialize(m_Width, m_Height);	// ≥ı ºªØ‰÷»æ∆˜
 
 		Initialize();
@@ -32,7 +38,7 @@ namespace Engine
 	
 	void Application::Initialize()
 	{
-		m_Behaviors.push_back(new Test());
+		m_Behaviors.push_back(new Player());
 	}
 	
 	void Application::Update()

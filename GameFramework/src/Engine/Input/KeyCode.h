@@ -9,6 +9,10 @@ namespace Engine
 		Left = VK_LEFT,		// вС╪Э
 		Right = VK_RIGHT,	// ср╪Э
 		Up = VK_UP,			// ио╪Э
-		Down = VK_DOWN		// об╪Э
+		Down = VK_DOWN,		// об╪Э
+		W = 0x57,
+		A = 0x41,
+		S = 0x53,
+		D = 0x44,
 	};
 }

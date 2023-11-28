@@ -56,7 +56,7 @@
     <ClInclude Include="src\Engine\Core\Behavior.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engine\Scripts\Test.h">
+    <ClInclude Include="src\Engine\Scripts\Player.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

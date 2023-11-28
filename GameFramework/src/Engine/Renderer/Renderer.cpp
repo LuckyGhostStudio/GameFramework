@@ -5,6 +5,7 @@
 namespace Engine
 {
 	Vector3 Renderer::m_LineColor = Vector3::Vector3(255, 255, 255);
+	int Renderer::m_LineWidth = 1;
 	Vector3 Renderer::m_FillColor = Vector3::Vector3(255, 255, 255);
 	Vector3 Renderer::m_ClearColor = Vector3::Vector3(255, 255, 255);
 
@@ -26,7 +27,7 @@ namespace Engine
 		FlushBatchDraw();	// 执行未完成的绘图任务：执行缓冲区的绘图操作
 	}
 
-	void Renderer::SetClearColor(Vector3 color)
+	void Renderer::SetClearColor(const Vector3& color)
 	{
 		m_ClearColor = color;
 		setbkcolor(RGB(color.x, color.y, color.z));
@@ -37,7 +38,7 @@ namespace Engine
 		cleardevice();
 	}
 
-	void Renderer::DrawRectangle(Vector2 position, Vector2 size, Vector3 color)
+	void Renderer::DrawRectangle(const Vector2& position, const Vector2& size, const Vector3& color)
 	{
 		m_LineColor = color;
 
@@ -46,7 +47,7 @@ namespace Engine
 		rectangle(position.x - size.x / 2, position.y - size.y / 2, position.x + size.x / 2, position.y + size.y / 2);
 	}
 
-	void Renderer::DrawFillRectangle(Vector2 position, Vector2 size, Vector3 color)
+	void Renderer::DrawFillRectangle(const Vector2& position, const Vector2& size, const Vector3& color)
 	{
 		m_LineColor = color;
 		m_FillColor = color;
@@ -57,7 +58,7 @@ namespace Engine
 		fillrectangle(position.x - size.x / 2, position.y - size.y / 2, position.x + size.x / 2, position.y + size.y / 2);
 	}
 
-	void Renderer::DrawFillRectangle(Vector2 position, Vector2 size, Vector3 lineColor, Vector3 fillColor)
+	void Renderer::DrawFillRectangle(const Vector2& position, const Vector2& size, const Vector3& lineColor, const Vector3& fillColor)
 	{
 		m_LineColor = lineColor;
 		m_FillColor = fillColor;
@@ -66,5 +67,16 @@ namespace Engine
 		setfillcolor(RGB(fillColor.x, fillColor.y, fillColor.z));
 
 		fillrectangle(position.x - size.x / 2, position.y - size.y / 2, position.x + size.x / 2, position.y + size.y / 2);
+	}
+
+	void Renderer::DrawCircle(const Vector2& position, float radius, const Vector3& color, float lineWidth)
+	{
+		m_LineColor = color;
+		m_LineWidth = lineWidth;
+
+		setlinecolor(RGB(color.x, color.y, color.z));
+		setlinestyle(PS_SOLID, lineWidth);
+
+		circle(position.x, position.y, radius);
 	}
 }

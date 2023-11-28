@@ -9,7 +9,9 @@ namespace Engine
 	class Application
 	{
 	private:
-		float m_Width = 1080.0f;
+		static Application* s_Instance;
+
+		float m_Width = 640.0f;
 		float m_Height = 640.0f;
 
 		float m_FramePerSecond = 0.0f;	// Ö¡ÂÊ
@@ -20,6 +22,11 @@ namespace Engine
 	public:
 		Application();
 		~Application();
+
+		inline float GetWidth() const { return m_Width; }
+		inline float GetHeight() const { return m_Height; }
+
+		static Application* GetInstance() { return s_Instance; }
 
 		/// <summary>
 		/// ÔËÐÐ
