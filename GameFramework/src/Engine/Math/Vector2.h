@@ -1,6 +1,7 @@
 #pragma once
 
 #include <ostream>
+#include <cmath>
 
 namespace Engine
 {
@@ -91,6 +92,21 @@ namespace Engine
 		{
 			output << "(" << vector.x << ", " << vector.y << ")";
 			return output;
+		}
+
+		static Vector2 Clamp(const Vector2& value, const Vector2& min, const Vector2& max)
+		{
+			Vector2 result = value;
+
+			if (value.x < min.x || value.x > max.x) {
+				result.x = abs(value.x - min.x) <= abs(value.x - max.x) ? min.x : max.x;	// Mathf.Clamp(value, min, max)
+			}
+			// ÏÞÖÆ y ·¶Î§ [0, screenSize.y]
+			if (value.y < min.y || value.y > max.y) {
+				result.y = abs(value.y - min.x) <= abs(value.y - max.y) ? min.y : max.y;	// Mathf.Clamp(value, min, max)
+			}
+
+			return result;
 		}
 	};
 }

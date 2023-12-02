@@ -6,16 +6,22 @@
 
 using namespace Engine;
 
+
+
 class Player : public Behavior
 {
 private:
+	Vector2 screenSize;
+
 	Vector2 position;
 	float radius = 11.0f;
 	float moveSpeed = 200.0f;
 public:
 	void virtual Start() override
 	{
-		position = Vector2(Application::GetInstance()->GetWidth() / 2, Application::GetInstance()->GetHeight() / 2);
+		screenSize = Vector2(Application::GetInstance()->GetWidth(), Application::GetInstance()->GetHeight());
+		position = screenSize / 2;
+
 		std::cout << position << std::endl;
 	}
 
@@ -27,6 +33,13 @@ public:
 	void virtual Update() override
 	{
 		std::cout << "position: " << position << std::endl;
+
+		Move();
+	}
+
+	void Move()
+	{
+		position = Vector2::Clamp(position, 0, screenSize);	// ÏÞÖÆÒÆ¶¯·¶Î§
 
 		if (Input::GetKey(KeyCode::Up) || Input::GetKey(KeyCode::W)) {
 			position += Vector2(0.0f, -moveSpeed * Time::deltaTime);
