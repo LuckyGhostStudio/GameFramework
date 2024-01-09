@@ -59,5 +59,8 @@
     <ClInclude Include="src\Engine\Scripts\Player.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\Engine\Scripts\Projectile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

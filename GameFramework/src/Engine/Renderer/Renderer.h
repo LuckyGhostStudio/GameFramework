@@ -68,5 +68,9 @@ namespace Engine
 		static void DrawFillRectangle(const Vector2& position, const Vector2& size, const Vector3& lineColor, const Vector3& fillColor);
 
 		static void DrawCircle(const Vector2& position, float radius, const Vector3& color, float lineWidth = 1.0f);
+
+		static void DrawTriangle(const Vector2 vertices[3], const Vector3& color, float lineWidth = 1.0f);
+
+		static void DrawFillEllipse(const Vector2& position, const Vector2& size, const Vector3& lineColor, const Vector3& fillColor);
 	};
 }

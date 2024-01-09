@@ -79,4 +79,28 @@ namespace Engine
 
 		circle(position.x, position.y, radius);
 	}
+
+	void Renderer::DrawTriangle(const Vector2 vertices[3], const Vector3& color, float lineWidth)
+	{
+		m_LineColor = color;
+		m_LineWidth = lineWidth;
+
+		setlinecolor(RGB(color.x, color.y, color.z));
+		setlinestyle(PS_SOLID, lineWidth);
+
+		for (int i = 0; i < 3; i++) {
+			line(vertices[i].x, vertices[i].y, vertices[(i + 1) % 3].x, vertices[(i + 1) % 3].y);
+		}
+	}
+
+	void Renderer::DrawFillEllipse(const Vector2& position, const Vector2& size, const Vector3& lineColor, const Vector3& fillColor)
+	{
+		m_LineColor = lineColor;
+		m_FillColor = fillColor;
+
+		setlinecolor(RGB(lineColor.x, lineColor.y, lineColor.z));
+		setfillcolor(RGB(fillColor.x, fillColor.y, fillColor.z));
+
+		fillellipse(position.x - size.x / 2, position.y - size.y / 2, position.x + size.x / 2, position.y + size.y / 2);
+	}
 }

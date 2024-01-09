@@ -1,10 +1,8 @@
 #include "Application.h"
 
 #include <chrono>
-#include <iostream>
 
 #include "Renderer/Renderer.h"
-#include "Input/Input.h"
 #include "Time.h"
 
 #include "Scripts/Player.h"
@@ -53,7 +51,7 @@ namespace Engine
 
 		Renderer::FlushBatch();		// 渲染未完成的图形
 
-		// 处理所有Behavior的Render方法
+		// 处理所有Behavior的Update方法
 		for (auto it = m_Behaviors.begin(); it != m_Behaviors.end(); it++) {
 			(*it)->Update();
 		}

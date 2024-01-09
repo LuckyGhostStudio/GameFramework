@@ -14,5 +14,6 @@ namespace Engine
 		A = 0x41,
 		S = 0x53,
 		D = 0x44,
+		Space = VK_SPACE
 	};
 }

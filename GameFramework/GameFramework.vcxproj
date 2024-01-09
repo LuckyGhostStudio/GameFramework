@@ -144,6 +144,7 @@
     <ClInclude Include="src\Engine\Math\Vector2.h" />
     <ClInclude Include="src\Engine\Math\Vector3.h" />
     <ClInclude Include="src\Engine\Scripts\Player.h" />
+    <ClInclude Include="src\Engine\Scripts\Projectile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
